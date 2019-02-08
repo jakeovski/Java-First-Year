@@ -2,6 +2,7 @@ import java.util.Scanner;
 
 public class BlackJack {
     public static void main(String[] args) {
+        //Declaring variables
         Scanner in = new Scanner(System.in);
         System.out.println("Let's start the game! The player draws two cards...");
         int firstCard = cardDraw();
@@ -10,6 +11,7 @@ public class BlackJack {
         int again = 0;
         System.out.println("The first card drawn is " + firstCard + "\nThe second card drawn is " + secondCard + "\nTotal score " + total );
         OUTER:
+        //Do while loop for player to draw cards as much as he wants
         do {
             System.out.println("Do you want to draw another card?\nYes - 1\nNo - 2");
             int draw = in.nextInt();
@@ -31,6 +33,7 @@ public class BlackJack {
                     break OUTER;
             }
         } while (again != 1);
+        //If player hasn't lost we start do while loop for the banker to draw his cards
         if (total <= 21 ) {
             System.out.println("Your total is " + total + "\nNow the banker draws his cards..");
             int bFirst = cardDraw();
@@ -46,6 +49,7 @@ public class BlackJack {
                    System.out.println("The banker has lost. Congratulations!");
                }
             } while (bTotal <= 21 && bTotal < total);
+            //Generating results
             System.out.println("Player's total score is " + total + "\nBanker's total score is " + bTotal);
             if (total == 21 || bTotal == 21) {
                 System.out.println("BLACKJACK!!");
@@ -62,6 +66,7 @@ public class BlackJack {
         }
     }   
     public static int cardDraw() {
+        //Simple method for card drawing
         int x = (int)(Math.random() * 10) + 1;
         return x;
     }
