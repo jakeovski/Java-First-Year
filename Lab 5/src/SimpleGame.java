@@ -75,6 +75,9 @@ public class SimpleGame {
             if (feedback(playerX,playerY,prizeX,prizeY) == true) {
                 found = true;
             }
+            else {
+                System.out.println(heat(playerX,playerY,prizeX,prizeY));
+            }
         }
     }
     public static boolean feedback(int playerX,int playerY,int prizeX,int prizeY) {
@@ -86,18 +89,21 @@ public class SimpleGame {
             // and out a message to that effect
             System.out.println("Hurrah! Game over");
             return true;
-        } else if (distanceToPrize == 1) {
-            System.out.println("Boiling");
-            return false;
-        } else if (distanceToPrize == 2) {
-            System.out.println("Hot");
-            return false;
-        } else if (distanceToPrize == 3) {
-            System.out.println("Warm");
-            return false;
-        } else {
-            System.out.println("Cold");
+        }
+        else {
             return false;
         }
 }
-}
+    public static String heat(int playerX,int playerY,int prizeX,int prizeY){
+        int distanceToPrize = Math.max(Math.abs(prizeX - playerX), Math.abs(prizeY - playerY));
+        if (distanceToPrize == 1) {
+            return "Boiling";
+        } else if (distanceToPrize == 2) {
+            return "Hot";
+        } else if (distanceToPrize == 3) {
+            return "Warm";
+        } else  {
+            return "Cold";
+        }
+    }
+    }
