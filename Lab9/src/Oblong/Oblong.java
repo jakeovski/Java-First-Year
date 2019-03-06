@@ -48,6 +48,11 @@ public class Oblong {
     public void setLength(double aLength) {
         length = aLength;
     }
+    
+    /**
+     * Seets the width of the circle
+     * @param aWidth 
+     */
     public void setWidth(double aWidth) {
         width = aWidth;
     }
