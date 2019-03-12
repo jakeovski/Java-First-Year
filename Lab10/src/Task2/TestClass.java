@@ -12,7 +12,7 @@ public class TestClass {
     public static void main(String[] args) {
         
         //Creating an instance of FootballTeam
-        FootballTeam team1 = new FootballTeam();
+        FootballTeam team1 = new FootballTeam(new String[] {"Dolboeb", "Dolboeb2 "},"red", 2, true);
         
         //Test or getters
         System.out.println("Lineup: " + team1.getPlayers());
@@ -37,7 +37,7 @@ public class TestClass {
         System.out.println(team1.addPlayer("Maddyson"));
         
         //Test remove player method
-        System.out.println("Remove Mamaev from the team: " + team1.removePlayer(2));
+        System.out.println("Remove Player 2 from the team: " + team1.removePlayer(2));
         
         //Test searc item method 
         System.out.println("Checking if holy Dzyuba is in the team: " + team1.searchItem("Dzyuba"));

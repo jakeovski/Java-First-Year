@@ -32,13 +32,27 @@ public class FootballTeam {
     private boolean knockedOut;
 
     /**
-     * The constructor for the football team
+     * Default constructor for the football team
      */
     public FootballTeam() {
         players = new String[5];
         color = "red";
         goal = 0;
         knockedOut = false;
+    }
+    
+    /**
+     * Parametric constructor
+     * @param aPlayers Players
+     * @param aColor Color
+     * @param aGoal Goal differrence
+     * @param isKnockedOut If team still in the competition
+     */
+    public FootballTeam(String[] aPlayers, String aColor, int aGoal, boolean isKnockedOut){
+        players = Arrays.copyOf(aPlayers,5);
+        color = aColor;
+        goal = aGoal;
+        knockedOut = isKnockedOut;
     }
 
     //-------------------Getter Methods-------------------
